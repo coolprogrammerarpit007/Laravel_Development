@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/demo',function(){
-    echo "Hello Laravel, Laravel is so cool";
-});
+// Route::get('/demo',function(){
+//     echo "Hello Laravel, Laravel is so cool";
+// });
 
 // Route::get('/new/',function(){
 //     return view('demo');
@@ -33,12 +33,27 @@ Route::get('/demo',function(){
 //     // echo $id;
 //     return view('demo');
 // });
-Route::get('/new/{name}/{id?}',function($name,$id = null){
-    $data = compact("name","id");
-    // print_r($data);
-    // echo $name;
-    return view('demo')->with($data); // with() is used to give data of url to blade.php file
-});
+// Route::get('/new/{name}/{id?}',function($name,$id = null){
+//     $data = compact("name","id");
+//     // print_r($data);
+//     // echo $name;
+//     return view('demo')->with($data); // with() is used to give data of url to blade.php file
+// });
 // Route::post('/test',function(){
 //     echo "Testing the data";
 // });
+
+// Route::get('/home/{name?}',function($name = null){
+//     $data = compact('name');
+//     return view('home')->with($data);
+// });
+
+Route::get('/first',function(){
+    return view('first');
+});
+Route::get('/about',function(){
+    return view('about');
+});
+Route::get('/course',function(){
+    return view('courses');
+});
