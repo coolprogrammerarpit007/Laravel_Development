@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\DemoController;
+use App\Http\Controllers\SingleActionController;
+use App\Http\Controllers\PhotoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,12 +50,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('home')->with($data);
 // });
 
-Route::get('/first',function(){
-    return view('first');
-});
-Route::get('/about',function(){
-    return view('about');
-});
-Route::get('/course',function(){
-    return view('courses');
-});
+// Route::get('/first',function(){
+//     return view('first');
+// });
+// Route::get('/about',function(){
+//     return view('about');
+// });
+// Route::get('/course',function(){
+//     return view('courses');
+// });
+
+
+// Now to call a controller through routes
+
+Route::get('/',[DemoController::class,'index']);
+Route::get('/about',[DemoController::class,'about']);
+Route::get('/course',SingleActionController::class);
+Route::resource('/photo',PhotoController::class);
