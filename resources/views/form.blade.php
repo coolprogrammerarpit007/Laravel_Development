@@ -12,33 +12,54 @@
 </head>
 
 <body>
-    <form action="{{url('/')}}/register" method="POST">
+    <form action="{{ url('/') }}/register" method="POST">
         @csrf
+        </pre>
         <div class="container">
             <h1 class="text-center">Registration</h1>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name...">
-                {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name..."
+                    value="{{ old('name') }}">
+                <span class="text-danger">
+                    @error('name')
+                        {{ $message }}
+                    @enderror
+                </span>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email...">
-                {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email..."
+                    value="{{ old('name') }}">
+                <span class="text-danger">
+                    @error('email')
+                        {{ $message }}
+                    @enderror
+                </span>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" class="form-control" name="password" id="password"
                     placeholder="Enter Password...">
-                {{-- <small id="helpId" class="text-muted">Help Text</small> --}}
+                <span class="text-danger">
+                    @error('password')
+                        {{ $message }}
+                    @enderror
+                </span>
             </div>
-            <button class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" class="form-control" name="confirm_password" id="confirm_password"
+                    placeholder="Enter Password...">
+                <span class="text-danger">
+                    @error('confirm_password')
+                        {{ $message }}
+                    @enderror
+                </span>
+            </div>
+            <button class="btn btn-primary" id="btn">Submit</button>
         </div>
     </form>
 </body>
-{{-- JS Link --}}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-</script>
-
+<script src="{{ asset('js/app.js')}}"></script>
 </html>
