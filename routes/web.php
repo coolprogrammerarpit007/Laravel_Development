@@ -74,6 +74,7 @@ Route::get('/register',[RegistrationController::class,'form']);
 Route::post('/register',[RegistrationController::class,'register']);
 Route::get('/customer',[CustomerController::class,'index']);
 Route::post('/customer',[CustomerController::class,'store']);
+Route::get('/customer/views',[CustomerController::class,'view']);
 
 // Route::get('/customer',function(){
 //     $customers = Customers::all();

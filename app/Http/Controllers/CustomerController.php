@@ -31,5 +31,14 @@ class CustomerController extends Controller
         // now save data
         $customer->save();
 
+        // redirect to view
+        return redirect('/customer/view');
+
+    }
+
+    public function view(){
+        $customers = Customers::all();
+        $data = compact('customers');
+        return view('customer-view')->with($data);
     }
 }
