@@ -12,6 +12,12 @@ class ContactController extends Controller
 
     public function contact(Request $request){
 
+        $request->validate([
+            "f-name" => "required",
+            "email" => "required|email",
+            "msg" => "required"
+        ]);
+
         echo "<pre>";
             print_r($request->all());
         echo "</pre";
