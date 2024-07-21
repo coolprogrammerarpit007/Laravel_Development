@@ -51,7 +51,8 @@
             </div>
             <div class="container-2">
                 <h3 class="form-title">send message</h3>
-                <form action="" method="post">
+                <form action="{{url('/')}}/form-submit" method="post">
+                    @csrf
                     <div class="form-input">
                         <input type="text" id="f-name" name="f-name" placeholder="Full Name">
                     </div>

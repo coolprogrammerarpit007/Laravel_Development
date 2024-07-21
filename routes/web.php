@@ -77,6 +77,7 @@ Route::get('/customer',[CustomerController::class,'index']);
 Route::post('/customer',[CustomerController::class,'store']);
 Route::get('/customer/views',[CustomerController::class,'view']);
 Route::get('/contact',[ContactController::class,'index']);
+Route::post('/form-submit',[ContactController::class,'contact']);
 
 // Route::get('/customer',function(){
 //     $customers = Customers::all();
