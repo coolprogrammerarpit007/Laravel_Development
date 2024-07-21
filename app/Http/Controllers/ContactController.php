@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Client;
 
 class ContactController extends Controller
 {
@@ -21,6 +22,13 @@ class ContactController extends Controller
         echo "<pre>";
             print_r($request->all());
         echo "</pre";
+
+        $client = new Client();
+        $client->name = $request['f-name'];
+        $client->email = $request['email'];
+        $client->message = $request['msg'];
+
+        $client->save();
 
     }
 }
