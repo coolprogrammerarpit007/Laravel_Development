@@ -8,6 +8,9 @@
 
     {{-- Font Awesome Link --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {{-- Css Link --}}
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
     <div class="container">
@@ -58,6 +61,7 @@
                     <div class="form-message">
                     <textarea name="msg" id="msg" cols="50" rows="10" placeholder="Enter your message here"></textarea>
                     </div>
+                    <input type="submit" value="Submit" id="submit-btn">
                 </form>
             </div>
         </div>
