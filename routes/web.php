@@ -6,6 +6,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ContactController;
 use App\Models\Customers;
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +76,7 @@ Route::post('/register',[RegistrationController::class,'register']);
 Route::get('/customer',[CustomerController::class,'index']);
 Route::post('/customer',[CustomerController::class,'store']);
 Route::get('/customer/views',[CustomerController::class,'view']);
+Route::get('/contact',[ContactController::class,'index']);
 
 // Route::get('/customer',function(){
 //     $customers = Customers::all();
