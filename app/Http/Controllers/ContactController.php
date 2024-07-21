@@ -30,5 +30,14 @@ class ContactController extends Controller
 
         $client->save();
 
+        // redirect
+        return redirect('/contact/view');
+
+    }
+
+    public function view(){
+        $client = Client::all();
+        $data = compact('client');
+        return view('contact-view')->with($data);
     }
 }
