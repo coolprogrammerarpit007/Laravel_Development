@@ -19,8 +19,6 @@
     </head>
 
     <body>
-        <a href="{{route('home')}}" style="background: blanchedalmond; padding:1.5rem; color:aquamarine border-radius:0.5rem">Go To Home</a>
-        <button onclick="window.location.href='{{route('contact')}}'">Go To Contact Page</button>
-        
+        <h3>This is a contact page</h3>
     </body>
 </html>

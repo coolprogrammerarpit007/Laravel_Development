@@ -7,6 +7,7 @@ use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactPageController;
 use App\Http\Controllers\HomeController;
 use App\Models\Customers;
 /*
@@ -93,3 +94,4 @@ Route::get('/navigation',function(){
 });
 
 Route::get('/home',[HomeController::class,'index'])->name('home');
+Route::get('/contact',[ContactPageController::class,'contact'])->name('contact');
