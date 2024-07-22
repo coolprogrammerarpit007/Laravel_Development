@@ -7,6 +7,7 @@ use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use App\Models\Customers;
 /*
 |--------------------------------------------------------------------------
@@ -67,18 +68,18 @@ use App\Models\Customers;
 
 // Now to call a controller through routes
 
-Route::get('/',[DemoController::class,'index']);
-Route::get('/about',[DemoController::class,'about']);
-Route::get('/course',SingleActionController::class);
-Route::resource('/photo',PhotoController::class);
-Route::get('/register',[RegistrationController::class,'form']);
-Route::post('/register',[RegistrationController::class,'register']);
-Route::get('/customer',[CustomerController::class,'index']);
-Route::post('/customer',[CustomerController::class,'store']);
-Route::get('/customer/views',[CustomerController::class,'view']);
-Route::get('/contact',[ContactController::class,'index']);
-Route::post('/form-submit',[ContactController::class,'contact']);
-Route::get('/contact/view',[ContactController::class,'view']);
+// Route::get('/',[DemoController::class,'index']);
+// Route::get('/about',[DemoController::class,'about']);
+// Route::get('/course',SingleActionController::class);
+// Route::resource('/photo',PhotoController::class);
+// Route::get('/register',[RegistrationController::class,'form']);
+// Route::post('/register',[RegistrationController::class,'register']);
+// Route::get('/customer',[CustomerController::class,'index']);
+// Route::post('/customer',[CustomerController::class,'store']);
+// Route::get('/customer/views',[CustomerController::class,'view']);
+// Route::get('/contact',[ContactController::class,'index']);
+// Route::post('/form-submit',[ContactController::class,'contact']);
+// Route::get('/contact/view',[ContactController::class,'view']);
 
 // Route::get('/customer',function(){
 //     $customers = Customers::all();
@@ -86,3 +87,9 @@ Route::get('/contact/view',[ContactController::class,'view']);
 //         print_r($customers->toArray());
 
 // });
+
+Route::get('/navigation',function(){
+    return view('navigation');
+});
+
+Route::get('/home',[HomeController::class,'index'])->name('home');
